@@ -17,7 +17,7 @@ check_package() {
 if [ "$1" = "-R" ]; then
 	shift
 	echo "Removing Package"
-	sudo pacman -R "$pkg" || echo "Remove Failed"
+	sudo pacman -R "$@" || echo "Remove Failed"
 	exit 0;
 fi
 
