@@ -14,6 +14,13 @@ check_package() {
     fi
 }
 
+if [ "$1" = "-R" ]; then
+	shift
+	echo "Removing Package"
+	sudo pacman -R "$pkg" || echo "Remove Failed"
+	exit 0;
+fi
+
 for pkg in "$@"; do
 	echo "Checking package $pkg..."
 	if check_package "$pkg"; then
