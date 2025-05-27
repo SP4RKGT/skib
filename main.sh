@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -eq 0 ]; then
-	echo "Usage: aura <package>"
+	echo "Usage: skib <package>"
 fi
 
 check_package() {
