@@ -17,7 +17,15 @@ check_package() {
 if [ "$1" = "-R" ]; then
 	shift
 	echo "Removing Package"
-	sudo pacman -R "$@" || echo "Remove Failed"
+	sudo pacman -R "$pkg" || echo "Remove Failed"
+	exit 0;
+fi
+
+if [ "$1" = "help" ]; then
+	echo "Welcome To skib $(whoami)!"
+	echo "There are 2 commands(other than help)."
+	echo "1) skib <package1> <package2> and so on. This installs the packages"
+	echo "2) skib -R <package1> <package2> this does the same as 1, but removes them."
 	exit 0;
 fi
 
